@@ -261,7 +261,7 @@ footer [src*="cheesington"] {
     margin: 0 auto;
     display: block;
 }
-footer section section:last-child {
+footer figure {
     position: relative;
     text-align: center;
     padding-bottom: 55px;
@@ -367,6 +367,9 @@ footer small {
         width: 100%;
         justify-content: space-between;
     }
+    footer small {
+        left: 140px;
+    }
     footer {
         margin-top: 0;
     }
@@ -400,7 +403,7 @@ footer small {
     }
     form {
         position: static;
-        margin: 180px auto 35px;
+        margin: 180px auto 15px;
         width: 310px;
         height: 42px; 
     }
@@ -484,9 +487,8 @@ footer small {
     footer section {
         justify-content: space-between;
     }
-    footer section section:last-child {
-        width: 500px;
-        padding: 0;
+    footer figure {
+        width: 400px;
     }
     footer [src*="cheesington"] {
         width: 230px;
