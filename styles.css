@@ -1,0 +1,503 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    background-color: rgba(122, 191, 191, .5);
+}
+body {
+    width: 414px;
+    background-color: #F2F2F2;
+    margin: 0 auto;
+}
+img {
+    width: 100%;
+}
+h1, h2, h3, nav span, nav a, 
+figcaption, menu li, #social li, footer {
+    font-family: "Bebas Neue";
+    font-size: 20px;
+}
+p, dd, dt, li, nav, input, ::placeholder {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+}
+dt {
+    font-weight: bold;
+}
+h1, h2 {
+    text-align: center;
+}
+h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+h2 {
+    font-size: 30px;
+}
+h3 {
+    font-size: 25px;
+}
+main > section, p {
+    padding: 10px;
+}
+a {
+    text-decoration: none;
+}
+menu, #social ul, nav ul{
+    list-style: none;
+}
+main section li, #details, header {
+    line-height: 1.5;
+}
+menu li, menu a, #social a, nav a{
+    color: #EB5428;
+}
+menu li:hover span, #social a:hover span,
+nav li:nth-child(n+2):nth-last-child(n+2) a:hover {
+    background-color: #EB5428;
+    color: white;
+}
+menu li, menu a, #social a, nav figure, nav [for="dropdown"] { /*icon on top, text on bottom*/
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+/*disappear*/
+nav h2, [href="#home"] figcaption, #details span, aside figcaption, aside span, form h3, footer h2, footer h3 { 
+    visibility: hidden;
+    position: absolute;
+}
+/*NAV LAYOUT*/
+body {
+    display: grid;
+}
+nav {
+    grid-row: 1/2;
+}
+/*MENU & SOCIAL*/
+menu li:hover{
+    cursor: pointer;
+}
+menu {
+    padding: 0 10px;
+}
+menu, #social ul{
+    margin-bottom: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+menu li, menu a, #social a {
+    margin: 0;
+}
+/*MAIN*/
+/*general styles for main*/
+main ul {
+    list-style-type: square;
+}
+main section li {
+    margin: 15px;
+}
+main li:last-child {
+    margin-bottom: 0;
+}
+/*details section*/
+#details dt, #details dd {
+    display: inline;
+}
+#details dd {
+    margin-left: 12px;
+}
+/*NAVIGATION*/
+/*General list styles and dropdown functionality*/
+nav {
+    position: relative;
+}
+nav ul {
+    position: fixed;
+    background-color: white;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+    width: 414px;
+    padding-top: 80px;
+}
+nav > input {
+    display: none;
+}
+nav input:checked ~ ul {
+    max-height: 500px;
+}
+nav img { 
+    display: none;
+}
+nav li:nth-child(n+2):nth-last-child(n+2) a{
+    display: block;
+    padding: 20px;
+}
+/*Button styling: menu, home, and sign in*/
+[for="dropdown"], nav li:first-child, nav li:last-child {
+    display: block;
+    height: 70px;
+}
+[href="#home"], [href="#user"] {
+    color: black;
+    display: block;
+    height: 100%;
+    padding: 10px 0 0;
+}
+[for="dropdown"] {
+    cursor: pointer;
+    position: fixed;
+    z-index: 1;
+    width: 100px;
+    padding: 10px 0 0;
+}
+nav li:first-child, nav li:last-child {
+    position: absolute;
+    top: 0;
+}
+nav li:first-child {
+    left: 100px;
+    width: 226px;
+}
+nav li:last-child {
+    right: 0;
+    width: 88px;
+}
+[href*="user"] svg {
+    stroke: #EB5428;
+}
+[href="#user"]:hover, [href="#home"] {
+    background-color: #EB5428;
+}
+nav figure, nav [for="dropdown"] {
+    justify-content: flex-end;
+}
+/*Search bar styling*/
+form {
+    margin: 110px auto 35px;
+    width: 310px;
+    height: 42px; 
+    display: grid;
+    grid-template-columns: 86% 15%;
+}
+#searchbar input, #searchbar button {
+    display: inline-block;
+    height: 100%;
+    border: 2.5px solid #EB5428;
+}
+#searchbar button {
+    background-color: #EB5428;
+    cursor: pointer;
+}
+#searchbar input  {
+    padding-left: 4px;
+}
+#searchbar svg {
+    stroke: white;
+}
+/*transition styles*/
+nav li:first-child, nav form {
+    transition-duration: 0.5s;
+}
+/*ASIDE- Side dishes section*/
+aside {
+    background-color: #7ABFBF;
+    padding-bottom: 0;
+}
+aside h2 {
+    margin-bottom: 36px;
+}
+aside section {
+    margin-top: 10px;
+}
+aside a {
+    color: black;
+    height: 110px;
+    display: grid;
+    column-gap: 20px;
+    grid-template-columns: 25% 75%;
+    grid-template-rows: repeat(3, 1fr);
+    align-items: start;
+    padding-bottom: 10px;
+}
+aside a:hover {
+    background-color: orange;
+}
+aside dt  {
+  margin-bottom: 5px;  
+}
+aside p {
+    margin-top: 8px;
+    padding: 0;
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+aside a img {
+    grid-column: 1/2;
+    grid-row: 1/5;
+}
+aside svg {
+    margin-right: 5px;
+}
+.stars4 svg:nth-last-of-type(n+2), .stars5 svg{
+    fill: #EB5428;
+}
+/*FOOTER*/
+footer {
+    margin-top: 20px;
+    padding: 40px 0 20px;
+    background-color: white;
+}
+#social {
+    margin-bottom: 20px;
+}
+footer [src*="cheesington"] {
+    width: 50%;
+    margin: 0 auto;
+    display: block;
+}
+footer section section:last-child {
+    position: relative;
+    text-align: center;
+    padding-bottom: 55px;
+}
+footer small {
+    position: absolute;
+    bottom: 0;
+    left: 150px;
+    font-size: inherit;
+    line-height: 1;
+}
+
+/*STYLES FOR MEDIUM SIZE*/
+@media screen and (min-width:768px) {
+    body, nav ul, menu {
+        width: 768px;
+    }
+    /*NAVIGATION*/
+    nav ul {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        z-index: 2;
+        
+        max-height: 200px;
+    }
+    [for="dropdown"] > *, nav input {
+        display: none;
+    }
+    nav img { 
+        width: 50px;
+        display: block;
+    }
+    nav li:first-child { /*home button*/
+        left: 0;
+        width: 80px;
+    }
+    form { 
+        position: fixed;
+        top: 20px;
+        margin: 0 0 0 350px;
+        z-index: 2;
+    }
+    /*HEADER*/
+    h1 {
+        margin-top: 220px;
+        text-align: left;
+        margin-left: 1ch;
+    }
+    header figure {
+        position: relative;
+    }
+    menu {
+        height: 100px;
+        align-content: center;
+        padding: 0;
+        position: absolute;
+        z-index: 1;
+        backdrop-filter: blur(3px);
+        background-color: rgba(255,255,255,0.7);
+    }
+    /*MAIN*/
+    /*overall layout for main*/
+    main {
+        display: grid;
+        grid-template-columns: 25% 75%;
+    }
+    #details, aside {
+        grid-column: 1/3;
+    }
+    #ingredients {
+        grid-column: 1/2;
+    }
+    /*details section*/
+    #details div {
+        text-align: center;
+    }
+    /*side dishes section*/
+    aside {
+        display: grid;
+        grid-auto-columns: 50% 50%;
+        grid-auto-flow: row;
+    }
+    aside a {
+        padding: 0;
+        margin-bottom: 10px;
+    }
+    aside h2 {
+        grid-column: 1/3;
+    }
+    aside dt, aside dd, aside figure{
+        display: inline;
+    }
+    /*FOOTER*/
+    footer section {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+    }
+    #social {
+        width: 60%;
+    }
+    #social ul {
+        width: 100%;
+        justify-content: space-between;
+    }
+    footer {
+        margin-top: 0;
+    }
+}
+
+/*STYLES FOR LARGE SIZE*/
+@media screen and (min-width:1280px) {
+    body, nav ul {
+        width: 1280px;
+    }
+    nav ul {
+        padding: 0;
+        max-height: 120px;
+        grid-template-columns: repeat(7, 120px);
+        justify-content: center;
+    }
+    nav img {
+        width: 60px;
+    }
+    [href="#home"], nav li:last-child{
+        height: 120px;
+        width: 120px;
+        padding: 0 0 10px;
+    }
+    nav li:last-child a {
+        padding: 0;
+    }
+    [href="#home"] figure, [href="#user"] figure {
+        justify-content: center;
+        height: 100%;
+    }
+    form {
+        position: static;
+        margin: 180px auto 35px;
+        width: 310px;
+        height: 42px; 
+    }
+    /*HEADER*/
+    header {
+        display: grid;
+        grid-template-columns: 10% 40% 50%;
+        grid-template-rows: auto 768px;
+        line-height: 2;
+    }
+     h1 {
+        text-align: center;
+        margin: 0;
+        grid-column: 1/5;
+    }
+    menu {
+        position: static;
+        width: auto;
+        height: auto;
+        
+        border: 2px solid #EB5428;
+        background-color: white;
+        margin: 0;
+        grid-template-columns: 1fr;
+        align-content: start;
+    }
+    menu li {
+        margin-top: 30px;
+    }
+    /*MAIN*/
+    /*overall layout for main*/
+    main {
+        grid-template-columns: 20% 80%;
+    }
+    /*details section*/
+    #details {
+        color: #7ABFBF;
+        background-color: black;
+    }
+    #details h2 {
+        margin-bottom: 10px;
+    }
+    #details dd {
+        display: block;
+    }
+    #details dl{
+        display: flex;
+        justify-content: space-around;
+    }
+    /*side dishes section*/
+    aside h2 {
+        margin: 10px;
+        grid-column: 1/5;
+    }
+    aside {
+        grid-auto-columns: 20%;
+        justify-content: space-around;
+    }
+    aside h3, aside p, aside dl {
+        padding-left: 10px;
+    }
+    aside a {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 10px;
+        height: 95%;
+        margin-bottom: 10px;
+    }
+    aside p {
+        margin: 10px 30px 10px 0;
+    }
+    aside img {
+        order: -1;
+        margin-bottom: 20px;
+    }
+    aside dd {
+        vertical-align: sub;
+    }
+    /*FOOTER*/
+    footer section {
+        justify-content: space-between;
+    }
+    footer section section:last-child {
+        width: 500px;
+        padding: 0;
+    }
+    footer [src*="cheesington"] {
+        width: 230px;
+        margin: 10px;
+        margin-right: auto;
+    }
+    footer small {
+        top: 25px;
+        left: 230px;
+    }
+    #social {
+        width: 50%;
+    }
+}
